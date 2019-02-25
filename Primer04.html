@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Primer z gumbi</title>
+    </head>
+    <body>
+        <button id = "prizgi1" onclick = "prizgi1()">Prižgi</button>
+        <button id = "ugasni1" onclick = "ugasni1()">Ugasni</button>
+        
+        <br>
+        
+        <script type = "text/javascript" src = "/socket.io/socket.io.js"></script>
+        <script type = "text/javascript">
+            var socket = io.connect("192.168.1.124");
+            
+            function prizgi1 () {
+                socket.emit("ukazArdiuinu, 1");
+            }
+            
+            function ugasni1 () {
+                socket.emit("ukazArduinu, 0");
+            }
+        </script>
+    </body>
+</html>

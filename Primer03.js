@@ -32,6 +32,6 @@ http.createServer(function(req, res){ // http.createServer([requestListener])
         
     res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
     res.write("Za test vpišite v brskalnikovo vrstico z naslovom: http://192.168.1.124:8080/1/1 <br>");
-    res.write("ali: http://192.168.1.124:8080/0/0<br>ali: http://192.168.1.124:8080/0/1<br>ali http://192.124.1.136:8080/1/0<br>");
+    res.write("ali: http://192.168.1.124:8080/0/0<br>ali: http://192.168.1.124:8080/0/1<br>ali http://192.124.1.124:8080/1/0<br>");
     res.end("Vrednost operatorja 1: " + operator1 + "<br>Vrednost operatorja 2: " + operator2);
 }).listen(8080, "192.168.1.124");

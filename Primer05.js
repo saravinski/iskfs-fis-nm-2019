@@ -10,7 +10,7 @@ var board = new firmata.Board("/dev/ttyACM0", function(){// ACM (Abstract Contro
 });
 
 function handler(req, res) { // "handler", ki je uporabljen pri require("http").createServer(handler)
-    fs.readFile(__dirname + "/Primer04.html", // povemo, da bomo ob zahtevi ("request") posredovali
+    fs.readFile(__dirname + "/Primer05.html", // povemo, da bomo ob zahtevi ("request") posredovali
     function (err, data) {                    // klientu datoteko primer04.html iz diska strežnika
         if (err) {
             res.writeHead(500, {"Content-Type": "text/plain"});
@@ -26,10 +26,16 @@ http.listen(8080); // strežnik bo poslušal na vratih 8080
 io.sockets.on("connection", function(socket) {
     socket.on("ukazArduinu", function(štUkaza) {
         if (štUkaza == "1") {
-            board.digitalWrite(13, board.HIGH); // zapišemo +5V na p. 13
+            board.digitalWrite(13, board.HIGH); // zapišemo +5V na pin 13
         }
         if (štUkaza == "0") {
             board.digitalWrite(13, board.LOW); // zapišemo 0V na pin13
+        }
+        if (štUkaza == "3") {
+            board.digitalWrite(12, board.HIGH); // zapišemo +5V na pin 8
+        }
+        if (štUkaza == "2") {
+            board.digitalWrite(12, board.LOW); // zapišemo 0V na pin8
         }
     });
 });

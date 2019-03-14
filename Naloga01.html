@@ -24,24 +24,23 @@
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
         
         <script type="text/javascript">
-        
             var socket = io.connect("192.168.1.124:8080");            
-            function prižgi1 () {
-                socket.emit("ukazArduinu", 1); // na strežnik pošljem 1
-            }
-            
-            function ugasni1 () {
-                socket.emit("ukazArduinu", 0); // na strežnik pošljem 0
-            }
-            
-            function prižgi2 () {
-                socket.emit("ukazArduinu", 3); // na strežnik pošljem 1
-            }
-
-            function ugasni2 () {
-                socket.emit("ukazArduinu", 2); // na strežnik pošljem 0
-            }
-            
+                function prižgi1 () {
+                    socket.emit("ukazArduinu", 1); // na strežnik pošljem 1
+                }
+                
+                function ugasni1 () {
+                    socket.emit("ukazArduinu", 0); // na strežnik pošljem 0
+                }
+                
+                function prižgi2 () {
+                    socket.emit("ukazArduinu", 3); // na strežnik pošljem 1
+                }
+    
+                function ugasni2 () {
+                    socket.emit("ukazArduinu", 2); // na strežnik pošljem 0
+                }
+                
         </script>
             
     </body>

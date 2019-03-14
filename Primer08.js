@@ -1,5 +1,3 @@
-// Primer08.js
-
 var http = require("http").createServer(handler); // pri req - handler
 var io = require("socket.io").listen(http); // socket.io knjižnica
 var fs = require("fs"); // spremenljivka za "file system" za branje .html dat.
